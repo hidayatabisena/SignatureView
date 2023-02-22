@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var signatureView: SwiftSignatureView!
     
+    
+    @IBOutlet weak var fileLocationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,11 +27,12 @@ class ViewController: UIViewController {
         let fileManager = FileManager.default
         let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
 
-        let uniqueFileName = "\(UUID().uuidString).png"
+        let uniqueFileName = "Signed-\(UUID().uuidString).png"
         let fileUrl = documentDirectory.appendingPathComponent(uniqueFileName)
 
         do {
             try imageData.write(to: fileUrl)
+            self.fileLocationLabel.text = fileUrl.path()
             print("Saved signature image to: \(fileUrl.path)")
         } catch let error {
             let alert = UIAlertController(title: "Error", message: "Unable to save signature image.", preferredStyle: .alert)

@@ -27,8 +27,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHk-jE-IQh">
-                                <rect key="frame" x="16" y="623" width="361" height="40"/>
+                                <rect key="frame" x="16" y="754" width="361" height="44"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="O0X-XZ-vIC"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
@@ -41,16 +44,25 @@
                                     <action selector="saveSignatureButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0c-aq-YHo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File location:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGb-SU-kMb">
+                                <rect key="frame" x="16" y="595" width="361" height="119"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SHk-jE-IQh" firstAttribute="top" secondItem="lgm-tb-lgm" secondAttribute="bottom" constant="86" id="2Yu-Wb-VmT"/>
+                            <constraint firstItem="SHk-jE-IQh" firstAttribute="top" secondItem="DGb-SU-kMb" secondAttribute="bottom" constant="40" id="0m5-2W-B06"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lgm-tb-lgm" secondAttribute="trailing" constant="16" id="54a-NZ-jVd"/>
                             <constraint firstItem="lgm-tb-lgm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dlc-Fd-Bev"/>
                             <constraint firstItem="lgm-tb-lgm" firstAttribute="centerX" secondItem="JJ2-eR-YMy" secondAttribute="centerX" id="Gep-Ev-KFt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SHk-jE-IQh" secondAttribute="bottom" constant="155" id="Qac-ha-ndP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DGb-SU-kMb" secondAttribute="trailing" constant="16" id="PwC-5p-efn"/>
+                            <constraint firstItem="DGb-SU-kMb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="T4b-z3-azK"/>
+                            <constraint firstItem="DGb-SU-kMb" firstAttribute="top" secondItem="lgm-tb-lgm" secondAttribute="bottom" constant="58" id="fjg-y1-wZp"/>
                             <constraint firstItem="lgm-tb-lgm" firstAttribute="top" secondItem="JJ2-eR-YMy" secondAttribute="bottom" constant="60" id="jCs-4U-IpY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SHk-jE-IQh" secondAttribute="bottom" constant="20" id="lB1-U1-hVY"/>
                             <constraint firstItem="JJ2-eR-YMy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="rjc-bC-653"/>
                             <constraint firstAttribute="bottom" secondItem="lgm-tb-lgm" secondAttribute="bottom" constant="315" id="ubk-7H-Nu9"/>
                             <constraint firstItem="SHk-jE-IQh" firstAttribute="leading" secondItem="lgm-tb-lgm" secondAttribute="leading" id="vkX-wa-thA"/>
@@ -58,6 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fileLocationLabel" destination="DGb-SU-kMb" id="8Rv-An-vSu"/>
                         <outlet property="signatureView" destination="lgm-tb-lgm" id="x7u-hl-Hjh"/>
                     </connections>
                 </viewController>
@@ -69,6 +82,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
