@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftsignatureview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alankarmisra/SwiftSignatureView.git",
+      "state" : {
+        "revision" : "6912d301de5088aa16d61566b62596069342a096",
+        "version" : "3.2.0"
+      }
+    }
+  ],
+  "version" : 2
+}
